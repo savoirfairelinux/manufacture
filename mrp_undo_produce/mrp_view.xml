@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="mrp_production_form_view" model="ir.ui.view">
+      <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+      <field name="model">mrp.production</field>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header/button[@string='Produce']" position="after">
+          <button name="%(act_mrp_product_unproduce)d" type="action"
+            string="Undo Production"
+            states="in_production,done"
+            attrs="{'invisible':[('has_production_runs', '!=', True)]}" />
+        </xpath>
+        <!-- Add the has_production_runs so we can hide "Undo" based on it -->
+        <xpath expr="//field[@name='product_id']" position="after">
+          <field name="has_production_runs" invisible="1" />
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>
