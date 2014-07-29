@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="mrp_production_tree_view" model="ir.ui.view">
+      <field name="inherit_id" ref="mrp.mrp_production_tree_view" />
+      <field name="model">mrp.production</field>
+      <field name="arch" type="xml">
+        <xpath expr="//tree/field[@name='hour_total']" position="before">
+          <field name="remaining_hour" sum="Total Remaining Hours" string="Remaining Hours" />
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>
