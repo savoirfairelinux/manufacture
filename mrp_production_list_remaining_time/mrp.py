@@ -40,10 +40,6 @@ class mrp(orm.Model):
     _columns = {
         'remaining_hour': fields.function(
             _get_remaining_time, method=True,
-            store={
-                "mrp.production": (
-                    lambda self, cr, uid, ids, c={}: ids,
-                    ['product_qty', 'remaining_qty', 'hour_total'],
-                    10),
-            }),
+            store=False,
+        ),
     }
