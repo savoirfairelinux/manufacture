@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="view_mrp_product_unproduce_wizard" model="ir.ui.view">
+      <field name="name">MRP Product Undo Produce</field>
+      <field name="model">mrp.product.unproduce</field>
+      <field name="arch" type="xml">
+        <form string="Undo Produce" version="7.0">
+          <field name="production_run_id" invisible="1" />
+          <group col="4">
+            <group string="Consumed Products" colspan="2">
+              <field name="consumed_lines" nolabel="1" readonly="1">
+                <tree string="Consumed Products">
+                  <field name="product_id" string="Product" />
+                  <field name="product_qty" string="Quantity" />
+                  <field name="product_uom" string="Unit" />
+                  <field name="state" invisible="1" />
+                </tree>
+              </field>
+            </group>
+            <group string="Produced Products" colspan="2">
+              <field name="produced_lines" nolabel="1" readonly="1">
+                <tree string="Produced Products">
+                  <field name="product_id" string="Product" />
+                  <field name="product_qty" string="Quantity" />
+                  <field name="product_uom" string="Unit" />
+                  <field name="state" invisible="1" />
+                </tree>
+              </field>
+            </group>
+          </group>
+          <footer>
+            <button name="do_unproduce" type="object" string="Confirm" class="oe_highlight"/>
+            or
+            <button string="Cancel" class="oe_link" special="cancel" />
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="act_mrp_product_unproduce" model="ir.actions.act_window">
+      <field name="name">Undo Produce</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.product.unproduce</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+  </data>
+</openerp>
+
