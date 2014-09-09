@@ -1,0 +1,37 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* mrp_production_list_remaining_qty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-03 21:17+0000\n"
+"PO-Revision-Date: 2014-06-03 17:24-0500\n"
+"Last-Translator: Vincent Vinet <vincent.vinet@savoirfairelinux.com>\n"
+"Language-Team: Savoir-Faire Linux\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: fr\n"
+
+#. module: mrp_production_list_remaining_qty
+#: field:mrp.production,remaining_qty:0
+msgid "unknown"
+msgstr "inconnu"
+
+#. module: mrp_production_list_remaining_qty
+#: model:ir.model,name:mrp_production_list_remaining_qty.model_mrp_production
+msgid "Manufacturing Order"
+msgstr "Ordre de production"
+
+#. module: mrp_production_list_remaining_qty
+#: view:mrp.production:0
+msgid "Total Remaining Qty"
+msgstr "Quantité restante totale"
+
+#. module: mrp_production_list_remaining_qty
+#: view:mrp.production:0
+msgid "Remaining Quantity"
+msgstr "Quantité restante"
