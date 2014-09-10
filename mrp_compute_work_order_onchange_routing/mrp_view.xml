@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="mrp_production_form_view_onchange_routing" model="ir.ui.view">
+      <field name="name">mrp.production.form.onchange.routing</field>
+      <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+      <field name="model">mrp.production</field>
+      <field name="groups_id"
+             eval="[(6, 0, [ref('mrp.group_mrp_manager') ])]"/>
+      <field name="arch" type="xml">
+      <xpath expr="/form/sheet/group//field[@name='routing_id']" position="replace">
+        <field name="routing_id" class="oe_inline"
+                 groups="mrp.group_mrp_routings"
+                  on_change="onchange_routing_id(routing_id)"/>
+      </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>
