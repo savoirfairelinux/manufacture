@@ -11,7 +11,7 @@
           <field name="product_id"/>
           <field name="date"/>
           <field name="serial_number"/>
-          <field name="product_qty"/>
+          <field name="produced_qty"/>
           <field name="creation_day" invisible="1"/>
           <field name="creation_year" invisible="1"/>
           <field name="creation_month" invisible="1"/>
