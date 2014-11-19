@@ -56,7 +56,8 @@ class mrp_production_run_line_extra(orm.Model):
             "move_state": move.state,
         }
 
-    def get_undo_write(self, cr, uid, run_id, move_id, state="before", context=None):
+    def get_undo_write(self, cr, uid, run_id, move_id, state="before",
+                       context=None):
         res = {}
         undo_lines = self.search(cr, uid, [
             ('run_id', '=', run_id),
@@ -109,7 +110,8 @@ class mrp_production_run(orm.Model):
     }
 
     _defaults = {
-        'date_produced': lambda *a: datetime.utcnow().strftime(DEFAULT_SERVER_DATETIME_FORMAT),
+        'date_produced': lambda *a: datetime.utcnow().strftime(
+            DEFAULT_SERVER_DATETIME_FORMAT),
     }
 
 
@@ -124,11 +126,15 @@ class mrp_production(orm.Model):
         return res
 
     _columns = {
-        'has_production_runs': fields.function(_has_production_runs, type="boolean", method=True),
-        'production_run_ids': fields.one2many('mrp.production.run', 'production_id', "Production runs"),
+        'has_production_runs': fields.function(_has_production_runs,
+                                               type="boolean", method=True),
+        'production_run_ids': fields.one2many('mrp.production.run',
+                                              'production_id',
+                                              "Production runs"),
     }
 
-    def action_produce(self, cr, uid, production_id, production_qty, production_mode, context=None):
+    def action_produce(self, cr, uid, production_id, production_qty,
+                       production_mode, context=None):
         m_extra = self.pool["mrp.production.run.line.extra"]
         write = {
             "production_qty": production_qty,
